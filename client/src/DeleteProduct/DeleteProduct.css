@@ -1,0 +1,113 @@
+.cart-page {
+    margin: 30px 100px;
+    padding: 30px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.item_details{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+  .cart-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+
+  .cart-item img{
+    flex-grow: 1;
+  }
+
+  .cart-item h3 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+    flex-grow: 6;
+  }
+  
+  .cart-item p {
+    margin: 0;
+    padding: 20px;
+    flex-grow: 1;
+  }
+  
+  .total-price {
+    font-weight: bold;
+    margin-top: 10px;
+    position: relative;
+  }
+
+
+  .cart-item button,  .proceed-btn, .confirm-btn{
+    background-color: #EC1C24;
+color: white;
+font-weight: bold;
+height: 2.5rem;
+margin: 5px;
+border-radius: 10px;
+font: weight 55px;
+font-family: Arial, Helvetica, sans-serif;
+border: 0;
+
+  }
+  .update-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .update-panel h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .update-panel input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .update-panel button {
+    display: block;
+    width: 50%;
+    position: relative;
+    left: 25%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .update-panel button:hover {
+    background-color: #45a049;
+  }
+
+  .update-panel label{
+    color: green;
+  }

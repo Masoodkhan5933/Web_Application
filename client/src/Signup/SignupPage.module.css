@@ -1,0 +1,77 @@
+.signup_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120vh;
+  background-color: #000;
+  background-image: url('../LoginPage/loginbackground.png') ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.signup_form {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  padding: 40px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50px;
+  gap: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.signup_form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.signup_form input,.signup_form select {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.signup_form button {
+  width: 50%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.signup_form button:hover {
+  background-color: #45a049;
+}
+
+.signup_form button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.checkbox{
+  position: relative;
+}
+
+.checkbox input{
+  position: absolute;
+  right: 57%;
+}
+
+.signup_checkbox_label input{
+  position: absolute;
+  right: 25%;
+}
+
+.message{
+  color: green;
+  font-weight: 700;
+  font-size: 16px;
+}

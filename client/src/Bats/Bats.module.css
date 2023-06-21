@@ -1,0 +1,74 @@
+
+.right{
+ display: flex;
+ flex-grow: 8;
+ height: auto;
+ align-items: center;
+ justify-content: center;
+ flex-flow: row wrap;
+ margin: 10px 55px;
+ 
+}
+.right div{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: auto;
+    height: 250px;
+    width: 30%;
+    margin: 5px;
+    padding:5px 0px ;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 40px;
+    background-color: white;
+    
+}
+.right div button{
+    position: absolute;
+    bottom: 1%;
+    height: 15%;
+    padding: 0px 10px;
+    border-radius: 20%;
+    background-color: #D3ECF6;
+}
+.right div button:hover{
+    transition: 0.3s;
+    background-color: #6DCFF6;
+}
+.right div p1{
+    color: black;
+    font-size: 90%;
+
+}
+.right div p2{
+    color: black;
+    font-weight: bold;
+    font-size: 90%;
+
+}
+
+.container{
+    display: flex;
+}
+
+@media screen and (max-width: 700px) {
+    .navbar .button_link {   
+      display: flex;
+      flex-direction: column;
+    padding: 10px;
+    }
+    .navbar{
+        height: 10rem;
+    }
+  }
+  @media screen and (max-width: 980px) {
+    .right div{
+       width: 47.8%;
+    }
+  }
+  @media screen and (max-width: 640px) {
+    .right div{
+       width: 100%;
+        }
+  }

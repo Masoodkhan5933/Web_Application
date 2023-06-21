@@ -1,0 +1,53 @@
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  .button_container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+ .button_container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    width: 50%;
+    border-radius: 5px;
+    margin: 15px;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s;
+  }
+  
+  .button_container button:hover {
+    background-color: #45a049;
+  }
+  
+  .sell_btn {
+    background-color: #2196f3;
+  }
+  
+  .delete_btn {
+    background-color: #f44336;
+  }
+  
+  .update_btn {
+    background-color: #ff9800;
+  }
+  
+  .add_product_btn {
+    background-color: #9c27b0;
+  }
+  

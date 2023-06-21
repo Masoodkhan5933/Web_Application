@@ -1,0 +1,40 @@
+
+.right{
+
+    display: flex;
+    width:auto;
+    flex-grow: 9;
+    height: 80vh;
+    justify-content: center;
+    background-image: url('background1.jpg.png');
+    background-repeat: no-repeat;
+    background-size: cover;   
+}
+
+.Item{
+position: relative;
+margin: 0px 0px 10px 0px;
+}
+
+.item_button{
+    position: absolute;
+    bottom: 12%;
+    right: 20%;
+    background-color: red;
+    border: 0;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+
+@media screen and (max-width: 700px) {
+    .navbar .button_link {   
+      display: flex;
+      flex-direction: column;
+    padding: 10px;
+    }
+    .navbar{
+        height: 10rem;
+    }
+  }

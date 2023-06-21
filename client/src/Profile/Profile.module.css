@@ -1,0 +1,43 @@
+.body{
+    height: 680px;
+    background-color: white;
+}
+
+.Container{
+    height: 160px;
+    width: 100%;
+    background-color: #094764;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.profile{
+position: absolute;
+height: 500px;
+width: 30%;
+background-color: transparent;
+border-radius: 40px;
+top: 40%;
+left: 35%;
+padding-top: 10px;
+    box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+h3 label{
+    font-size: 17px;
+    font-weight: 500;
+    color: blue;
+}
+
+.profile button{
+    border: 0;
+    border-radius: 15px;
+    background-color: red;
+    color: white;
+    font-weight: 600;
+}

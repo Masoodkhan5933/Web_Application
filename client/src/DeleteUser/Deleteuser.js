@@ -1,31 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import './DeleteProduct.css';
-import { getProducts, deleteProduct, updateProduct } from '../api/product';
+import './Deleteuser.css';
 import { useNavigate } from 'react-router-dom';
+import { deleteUser, getUsers, updateUser } from '../api/userapi';
 
-const DeletePage = () => {
+const DeleteUserPage = () => {
   const navigate = useNavigate()
   const [data, setData] = useState([]);
   const [updateData, setUpdateData] = useState({
     id: '',
     name: '',
-    image: '',
-    desc: '',
-    price: '',
+    dob: '',
+    email: '',
+    password: '',
+    role: '',
+    usertype: '',
   });
   const [updatePanelOpen, setUpdatePanelOpen] = useState(false);
 
   useEffect(() => {
-    getProductDetails();
+    getuserDetails();
   }, []);
 
-  const getProductDetails = async () => {
-    const result = await getProducts();
+  const getuserDetails = async () => {
+    const result = await getUsers();
     setData(result);
   };
 
   const handleRemoveItem = (itemId) => {
-    deleteProduct(itemId);
+    deleteUser(itemId);
+    getuserDetails();
   };
 
   const handleUpdateItem = (itemId) => {
@@ -33,9 +36,11 @@ const DeletePage = () => {
     setUpdateData({
       id: selectedItem._id,
       name: selectedItem.name,
-      image: selectedItem.image,
-      desc: selectedItem.desc,
-      price: selectedItem.price,
+      dob: selectedItem.dob,
+      email: selectedItem.email,
+      password: selectedItem.password,
+      role: selectedItem.role,
+      usertype: selectedItem.usertype,
     });
     setUpdatePanelOpen(true);
   };
@@ -50,31 +55,42 @@ const DeletePage = () => {
 
   const handleUpdateProduct = () => {
     console.log("updated")
-    updateProduct(updateData.id, updateData);
+    updateUser(updateData.id, updateData);
     setUpdateData({
       id: '',
       name: '',
-      image: '',
-      desc: '',
-      price: '',
+      dob: '',
+      email: '',
+      password: '',
+      role: '',
+      usertype: '',
     });
+    getuserDetails();
     setUpdatePanelOpen(false);
-    getProductDetails();
+    
   };
 
   return (
     <div>
       <div className="cart-page">
-        <h2>ALL PRODUCTS</h2>
+        <h2>ALL USERS</h2>
+        <div className="Headings">
+          <h3>NAME</h3> 
+          <h3>EMAIL</h3>
+          <h3>ROLE</h3>
+          <h3>TYPE</h3>
+        </div>
         <div className="item_details">
           {data.map((item) => (
-            <div className="cart-item" key={item._id}>
-              <img src={item.image} alt="pic" style={{ width: '50px' }} />
-              <h3>{item.name}</h3>
-              <p>Price: £{item.price}</p>
+            item.usertype!=='admin'&&<div className="cart-item" key={item._id}>
+              <h3>{item.name}</h3> 
+              <h3>{item.email}</h3>
+              <h3>{item.role}</h3>
+              <h3>{item.usertype}</h3>
               <button onClick={() => handleRemoveItem(item._id)}>DELETE</button>
               <button onClick={() => handleUpdateItem(item._id)}>UPDATE</button>
             </div>
+            
           ))}
         </div>
         <button onClick={() => navigate(-1)}>BACK</button>
@@ -91,29 +107,45 @@ const DeletePage = () => {
             onChange={handleUpdateDataChange}
             placeholder="Product Name"
           />
-          <label>Image Url</label>
+          <label>Date of Birth</label>
           <input
             type="text"
-            name="image"
-            value={updateData.image}
+            name="dob"
+            value={updateData.dob}
             onChange={handleUpdateDataChange}
-            placeholder="Image Link"
+            placeholder="Date of Birth"
           />
-          <label>Description:</label>
+          <label>Email</label>
           <input
             type="text"
-            name="desc"
-            value={updateData.desc}
+            name="email"
+            value={updateData.email}
             onChange={handleUpdateDataChange}
-            placeholder="Product Description"
+            placeholder="Email"
           />
-          <label>Price</label>
+          <label>Password</label>
           <input
-            type="number"
-            name="price"
-            value={updateData.price}
+            type="text"
+            name="password"
+            value={updateData.password}
             onChange={handleUpdateDataChange}
-            placeholder="Product Price"
+            placeholder="Password"
+          />
+          <label>Role</label>
+          <input
+            type="text"
+            name="role"
+            value={updateData.role}
+            onChange={handleUpdateDataChange}
+            placeholder="Role"
+          />
+          <label>User Type</label>
+          <input
+            type="text"
+            name="usertype"
+            value={updateData.usertype}
+            onChange={handleUpdateDataChange}
+            placeholder="User Type"
           />
           <button onClick={handleUpdateProduct}>Save</button>
         </div>
@@ -122,4 +154,4 @@ const DeletePage = () => {
   );
 };
 
-export default DeletePage;
+export default DeleteUserPage;

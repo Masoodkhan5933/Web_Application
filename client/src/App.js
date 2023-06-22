@@ -15,12 +15,14 @@ import { useState } from 'react';
 import { getProducts } from './api/product';
 import AddProductPage from './addProduct/addproducts';
 import DeletePage from './DeleteProduct/DeleteProduct';
-import SellerPage from './sellerPage/sellerPage';
+import SellerPage from './adminPage/adminPage';
+import { getUsers } from './api/userapi';
+import DeleteUserPage from './DeleteUser/Deleteuser';
 
 
 function App() {
   
-
+ 
   const [cartItems, setCartItems] = useState([
     
   ]);
@@ -41,7 +43,8 @@ function App() {
   
   return (
  <div>
-  <Header cartItems={cartItems} HandleComponent={HandleComponent}/>
+  
+  <Header cartItems={cartItems} HandleComponent={HandleComponent} user={user}/>
   <Routes>
  
   <Route path='/home' element={<Home />}/>
@@ -56,7 +59,7 @@ function App() {
   
   <Route path='/' element={<LoginPage setUser={setUser}/>}/>
   
-  <Route path='/profile' element={<Profile />}/>
+  <Route path='/profile' element={<Profile user={user}/>}/>
   
   <Route path='/cart' element={<CartPage cartItems={cartItems} setCartItems={setCartItems}/>}/>
   
@@ -64,8 +67,10 @@ function App() {
 
   <Route path='/delete' element={<DeletePage/>}/>
   
-  <Route path='/seller' element={<SellerPage/>}/>
+  <Route path='/admin' element={<SellerPage/>}/>
 
+  <Route path='/deleteuser' element={<DeleteUserPage/>}/>
+  
     </Routes>
     <Footer/>
     </div>

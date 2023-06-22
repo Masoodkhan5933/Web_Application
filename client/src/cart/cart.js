@@ -1,12 +1,9 @@
 import React, { useState, useMemo, useContext } from 'react';
 import './cart.css';
 import cart from '../Header_Footer/cart.jpeg';
-import { CartContext } from '../contexts/cart.context';
 
 const CartPage = ({ cartItems, setCartItems }) => {
-  
-  const Item=useContext(CartContext);
-  
+
   const [address, setAddress] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [showMenu, setShowMenu] = useState(false);
@@ -47,7 +44,7 @@ const CartPage = ({ cartItems, setCartItems }) => {
         <img src={cart} alt="pic" height="100px" />
         <h2>Cart</h2>
         {cartItems.length === 0 ? (
-          <p>No items in the cart{Item.name}</p>
+          <p>No items in the cart</p>
         ) : (
           <div className="item_details">
             {cartItemElements}

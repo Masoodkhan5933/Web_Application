@@ -30,8 +30,12 @@ const LoginPage = ({ setUser }) => {
     usersdata.map((user) => {
       if (user.email.toLowerCase() === email.toLowerCase() && user.password === password) {
         console.log("found");
-        if (user.usertype === 'user') {
-          navigate('/seller');
+        setUser(user)
+        if (user.usertype === 'admin') {
+          navigate('/admin');
+        }
+        if(user.usertype==='user'){
+          navigate('/home')
         }
       } else {
         setflag(true);

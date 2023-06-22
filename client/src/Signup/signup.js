@@ -124,8 +124,9 @@ const SignupPage = () => {
           >
             <option value="">Select user type</option>
             <option value="user">User</option>
-            <option value="admin">Admin</option>
             <option value="seller">Seller</option>
+            <option value="admin">Seller</option>
+          
           </select>
           <label className={styles.signup_checkbox_label}>
             <input

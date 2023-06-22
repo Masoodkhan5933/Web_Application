@@ -12,10 +12,10 @@ const Header = ({ cartItems, HandleComponent, user }) => {
   
 
   useEffect(() => {
-    if (user.usertype === 'seller' || user.usertype === 'admin') {
-      setFlag1(false);
-    }
-  }, [flag]);
+  if (user.usertype === 'seller' || user.usertype === 'admin') {
+    setFlag1(false);
+  }
+}, [user.usertype]);
 
   const navigate = useNavigate();
 

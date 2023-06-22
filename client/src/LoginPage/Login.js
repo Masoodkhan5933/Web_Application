@@ -28,24 +28,21 @@ const LoginPage = ({ setUser }) => {
     e.preventDefault();
 
     usersdata.map((user) => {
-      if (user.email.toLowerCase() === email.toLowerCase() && user.password === password) {
-        console.log("found");
-        setUser(user);
-        if (user.usertype === 'admin') {
-          navigate('/admin');
-        }
-        if (user.usertype === 'user') {
-          navigate('/home');
-        }
-        if (user.usertype === 'seller') {
-          navigate('/addproduct');
-        }
-        return null; // Add a return statement here
-      } else {
-        setflag(true);
-        return null; // Add a return statement here
-      }
-    });
+  if (user.email.toLowerCase() === email.toLowerCase() && user.password === password) {
+    console.log("found");
+    setUser(user);
+    if (user.usertype === 'admin') {
+      navigate('/admin');
+    }
+    if (user.usertype === 'user') {
+      navigate('/home');
+    }
+    return null; // Add a return statement here
+  } else {
+    setflag(true);
+    return null; // Add a return statement here
+  }
+});
 
     setErrorMessage(flag);
   };

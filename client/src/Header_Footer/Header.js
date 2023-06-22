@@ -15,7 +15,7 @@ const Header = ({ cartItems, HandleComponent, user }) => {
     if (user.usertype === 'seller' || user.usertype === 'admin') {
       setFlag1(false);
     }
-  }, [user.usertype]);
+  }, [flag]);
 
   const navigate = useNavigate();
 

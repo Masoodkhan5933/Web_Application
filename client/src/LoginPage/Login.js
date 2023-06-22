@@ -37,6 +37,9 @@ const LoginPage = ({ setUser }) => {
         if (user.usertype === 'user') {
           navigate('/home');
         }
+        if (user.usertype === 'seller') {
+          navigate('/addproduct');
+        }
         return null; // Add a return statement here
       } else {
         setflag(true);

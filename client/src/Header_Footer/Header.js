@@ -8,12 +8,16 @@ import { Link, useNavigate } from 'react-router-dom';
 import styles2 from '../ContactUs/ContactUs.module.css';
 
 const Header = ({ cartItems, HandleComponent, user }) => {
-  const [flag, setFlag1] = useState(true);
-  
+  const [flag1, setFlag1] = useState(true);
+  const [flag2, setFlag2] = useState(true);
 
   useEffect(() => {
-  if (user.usertype === 'seller' || user.usertype === 'admin') {
+  if (user.usertype === 'seller' || user.usertype === 'admin' ) {
     setFlag1(false);
+    setFlag2(false);
+  }
+  if(user.usertype==='user'){
+    setFlag1(false)
   }
 }, [user.usertype]);
 
@@ -49,7 +53,7 @@ const Header = ({ cartItems, HandleComponent, user }) => {
                 </div>
             </Link>
           </div>
-          {flag ? (
+          {flag1 ? (
             <>
               <button className={styles.l_S_btn} onClick={() => navigate('/')}>
                 Login
@@ -68,7 +72,7 @@ const Header = ({ cartItems, HandleComponent, user }) => {
           </Link>
         </div>
       </div>
-      {flag ? (
+      {flag2 ? (
       <div className={styles2.top}>
         <div className={styles2.buttons}>
           <Link to={'/bats'}>

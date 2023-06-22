@@ -6,13 +6,15 @@ import fb from './fb.png';
 import appstore from './appstore.png';
 import playstore from './googleplay.png';
 
-import { Link} from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 
 const Footer =()=>{
+    const navigate = useNavigate();
     const handleLogout = () => {
         // Perform any logout logic here (e.g., clearing user session, etc.)
-    
+        navigate('/')
         // Reload the page
+        
         window.location.reload();
       };
     return(

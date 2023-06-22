@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Home from './Home/Home';
 import Contactus from './ContactUs/ContactUs';
 import LoginPage from './LoginPage/Login';
 import SignupPage from './Signup/signup';
-import { BrowserRouter as Router, Switch, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Route, Routes } from 'react-router-dom';
 
 import Controller from './Bats/Controller';
 import Profile from './Profile/Profile';
@@ -12,11 +12,9 @@ import CartPage from './cart/cart';
 import Header from './Header_Footer/Header';
 import Footer from './Header_Footer/footer';
 import { useState } from 'react';
-import { getProducts } from './api/product';
 import AddProductPage from './addProduct/addproducts';
 import DeletePage from './DeleteProduct/DeleteProduct';
 import SellerPage from './adminPage/adminPage';
-import { getUsers } from './api/userapi';
 import DeleteUserPage from './DeleteUser/Deleteuser';
 
 

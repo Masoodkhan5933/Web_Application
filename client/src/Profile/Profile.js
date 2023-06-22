@@ -11,7 +11,7 @@ const UserProfile = ({user}) => {
   const [users,setuser]=useState([]);
   useEffect(()=>{  
     getUserdetails();
-  },[getUserdetails()])
+  })
 
   const getUserdetails= async ()=>{
    const result = await getUsers();

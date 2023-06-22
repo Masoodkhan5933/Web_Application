@@ -34,11 +34,13 @@ const LoginPage = ({ setUser }) => {
         if (user.usertype === 'admin') {
           navigate('/admin');
         }
-        if(user.usertype === 'user'){
+        if (user.usertype === 'user') {
           navigate('/home');
         }
+        return null; // Add a return statement here
       } else {
         setflag(true);
+        return null; // Add a return statement here
       }
     });
 

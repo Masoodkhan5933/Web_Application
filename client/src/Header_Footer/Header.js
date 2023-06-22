@@ -60,7 +60,7 @@ const Header = ({ cartItems, HandleComponent, user }) => {
             </>
           ) : null}
 
-          <Link to='/'>
+          <Link to='/home'>
             <a href='home.html'>Home</a>
           </Link>
           <Link to='/contactus'>

@@ -9,6 +9,12 @@ import playstore from './googleplay.png';
 import { Link} from 'react-router-dom';
 
 const Footer =()=>{
+    const handleLogout = () => {
+        // Perform any logout logic here (e.g., clearing user session, etc.)
+    
+        // Reload the page
+        window.location.reload();
+      };
     return(
         <div>
             <div className='Container color'>
@@ -53,7 +59,7 @@ const Footer =()=>{
                     <div className='column color'>
                             <img src={appstore} alt="Facebook Icon" /><br/>
                             <img src={playstore} alt="Twitter Icon" />
-                        
+                            <button onClick={handleLogout}>Logout</button>
 
                     </div>
                 </div>

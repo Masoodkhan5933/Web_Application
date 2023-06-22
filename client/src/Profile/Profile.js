@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './Profile.module.css';
 import { useState,useEffect } from 'react';
 
-import logo from './profileimg.jpeg';
 import { useNavigate } from 'react-router-dom';
 import { getUsers } from '../api/userapi';
 

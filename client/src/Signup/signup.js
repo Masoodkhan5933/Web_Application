@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import styles from './SignupPage.module.css';
-import Header from '../Header_Footer/Header';
 import { addUser } from '../api/userapi';
 
 const SignupPage = () => {

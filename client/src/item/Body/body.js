@@ -7,8 +7,6 @@ const ItemBody = (props) => {
   const [count, setCount] = useState(1);
   const [updatedCount, setUpdatedCount] = useState(1); 
 
-  const [bucketstate, setBucketstate] = useState('Add to Bucket');
-
   useEffect(() => {
     setCount(updatedCount); 
   }, [updatedCount]);
@@ -57,7 +55,6 @@ const ItemBody = (props) => {
 
               <button
                 onClick={() => {
-                  setBucketstate('Added');
                   props.pushToCart(props.item);
                 }}
                 className="TopButton addbucket_btn"

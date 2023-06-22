@@ -15,14 +15,14 @@ const LoginPage = ({ setUser }) => {
   const [usersdata, setusersdata] = useState([]);
   const [flag, setflag] = useState(false);
 
-  useEffect(() => {
-    getuserDetails();
-  }, []);
-
   const getuserDetails = async () => {
     setusersdata(await getUsers());
     console.log(usersdata);
   };
+
+  useEffect(() => {
+    getuserDetails();
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,12 +30,12 @@ const LoginPage = ({ setUser }) => {
     usersdata.map((user) => {
       if (user.email.toLowerCase() === email.toLowerCase() && user.password === password) {
         console.log("found");
-        setUser(user)
+        setUser(user);
         if (user.usertype === 'admin') {
           navigate('/admin');
         }
-        if(user.usertype==='user'){
-          navigate('/home')
+        if(user.usertype === 'user'){
+          navigate('/home');
         }
       } else {
         setflag(true);
@@ -72,9 +72,9 @@ const LoginPage = ({ setUser }) => {
           />
           {errorMessage && <p className="error-message">Invalid Username or Password</p>}
           <button type="submit">Login</button>
-          <a>
-            <h4>Signup</h4>
-          </a>
+          <button style={{margin:"10px 0px"}} onClick={()=>navigate('/signup')}>
+            Signup
+          </button>
         </form>
       </div>
     </div>

@@ -7,19 +7,12 @@ import { useNavigate } from 'react-router-dom';
 import { getUsers } from '../api/userapi';
 
 const UserProfile = ({user}) => {
-  const user1 = {
-    name: 'M. Masood Khan',
-    DOB:'02-11-2003',
-    email: 'xyz123@gmail.com',
-    profilepic : logo,
-    role: 'Batsman',
-  };
-
+ 
   //users from DB
   const [users,setuser]=useState([]);
   useEffect(()=>{  
     getUserdetails();
-  },[])
+  },[getUserdetails()])
 
   const getUserdetails= async ()=>{
    const result = await getUsers();

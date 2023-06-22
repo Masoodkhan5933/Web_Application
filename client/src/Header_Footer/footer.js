@@ -6,7 +6,7 @@ import fb from './fb.png';
 import appstore from './appstore.png';
 import playstore from './googleplay.png';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 const Footer =()=>{
     return(

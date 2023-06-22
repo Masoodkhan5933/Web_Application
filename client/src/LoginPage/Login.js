@@ -22,7 +22,7 @@ const LoginPage = ({ setUser }) => {
 
   useEffect(() => {
     getuserDetails();
-  }, []);
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -40,7 +40,7 @@ const UserProfile = ({user}) => {
             
             <h3> Role: <label>{users.role}</label></h3>
 
-            <button onClick={()=>navigate('/home')}>Back to Home page</button>
+            <button onClick={()=>navigate(-1)}>Back</button>
         </div>
         
         </div>

@@ -21,7 +21,7 @@ const LoginPage = ({ setUser }) => {
   };
 
   useEffect(() => {
-    getuserDetails();
+    getuserDetails()
   });
 
   const handleSubmit = (e) => {

@@ -12,6 +12,8 @@ const Header = ({ cartItems, HandleComponent, user }) => {
   const [flag2, setFlag2] = useState(true);
 
   useEffect(() => {
+    setFlag1(true)
+    setFlag2(true)
   if (user.usertype === 'seller' || user.usertype === 'admin' ) {
     setFlag1(false);
     setFlag2(false);

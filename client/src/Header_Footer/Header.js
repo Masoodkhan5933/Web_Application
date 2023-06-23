@@ -7,13 +7,11 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styles2 from '../ContactUs/ContactUs.module.css';
 
-const Header = ({ cartItems, HandleComponent, user }) => {
+const Header = ({ cartItems, HandleComponent, user ,flag}) => {
   const [flag1, setFlag1] = useState(true);
   const [flag2, setFlag2] = useState(true);
 
   useEffect(() => {
-    setFlag1(true)
-    setFlag2(true)
   if (user.usertype === 'seller' || user.usertype === 'admin' ) {
     setFlag1(false);
     setFlag2(false);
@@ -44,10 +42,12 @@ const Header = ({ cartItems, HandleComponent, user }) => {
         <div className={styles.button_link}>
           <div className={styles.cart_profile}>
             <Link to='/cart'>
-              <div className={styles.cart}>
-                <img src={cart} alt='cart' width='40px' height='40px' />
-                <p>{cartItems.length}</p>
-              </div>
+            {flag && (
+      <div className={styles.cart}>
+        <img src={cart} alt="cart" width="40px" height="40px" />
+        <p>{cartItems.length}</p>
+      </div>
+    )}
             </Link>
             <Link to='/profile'>
               <div className={styles.profile}>
@@ -55,7 +55,7 @@ const Header = ({ cartItems, HandleComponent, user }) => {
                 </div>
             </Link>
           </div>
-          {flag1 ? (
+          {flag1 && flag? (
             <>
               <button className={styles.l_S_btn} onClick={() => navigate('/')}>
                 Login
@@ -66,15 +66,21 @@ const Header = ({ cartItems, HandleComponent, user }) => {
             </>
           ) : null}
 
-          <Link to='/home'>
-            <a href='home.html'>Home</a>
-          </Link>
-          <Link to='/contactus'>
-            <a href='contactus.html'>Contact Us</a>
-          </Link>
+        {flag && (
+        <Link to="/home">
+          <a href="home.html">Home</a>
+        </Link>
+          )}
+
+        {flag && (
+        <Link to="/contactus">
+          <a href="contactus.html">Contact Us</a>
+        </Link>
+        )}  
+          
         </div>
       </div>
-      {flag2 ? (
+      {flag2 && flag ? (
       <div className={styles2.top}>
         <div className={styles2.buttons}>
           <Link to={'/bats'}>

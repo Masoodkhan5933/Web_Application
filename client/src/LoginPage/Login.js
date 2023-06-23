@@ -5,7 +5,9 @@ import logo from '../Home/logo.png';
 import { useNavigate } from 'react-router-dom';
 import { getUsers } from '../api/userapi';
 
-const LoginPage = ({ setUser }) => {
+const LoginPage = ({ setUser,setloginflag }) => {
+  
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(false);
@@ -22,6 +24,7 @@ const LoginPage = ({ setUser }) => {
 
   useEffect(() => {
     getuserDetails()
+    setloginflag(true)
   });
 
   const handleSubmit = (e) => {
@@ -29,12 +32,14 @@ const LoginPage = ({ setUser }) => {
 
     usersdata.map((user) => {
   if (user.email.toLowerCase() === email.toLowerCase() && user.password === password) {
+    
     console.log("found");
     setUser(user);
     if (user.usertype === 'admin') {
       navigate('/admin');
     }
     if (user.usertype === 'user') {
+      setloginflag(true)
       navigate('/home');
     }
     if (user.usertype === 'seller') {

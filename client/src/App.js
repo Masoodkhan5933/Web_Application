@@ -32,17 +32,19 @@ function App() {
 
   // DOING LOGIN OPERATIONS
   const [user, setUser] = useState([]);
+  const [flag, setflag] = useState(true);
 
+  console.log(flag)
   return (
     <div>
-      <Header cartItems={cartItems} HandleComponent={HandleComponent} user={user} />
+      <Header cartItems={cartItems} HandleComponent={HandleComponent} user={user} flag={flag} />
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/bats" element={<Controller pushToCart={pushToCart} component={component} />} />
         <Route path="/itembody" element={<ItemBody />} />
         <Route path="/contactus" element={<Contactus />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/" element={<LoginPage setUser={setUser} />} />
+        <Route path="/" element={<LoginPage setUser={setUser} setloginflag={setflag}/>} />
         <Route path="/profile" element={<Profile user={user} />} />
         <Route path="/cart" element={<CartPage cartItems={cartItems} setCartItems={setCartItems} />} />
         <Route path="/addproduct" element={<AddProductPage />} />

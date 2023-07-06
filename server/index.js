@@ -6,7 +6,7 @@ import cors from 'cors'
 
 const app=express()
 
-
+const URL='https://starsports-cap10.onrender.com';
 
 connection
 .then(()=>{
@@ -18,8 +18,8 @@ connection
 
 app.use(express.json())
 app.use(cors())
-app.use('/product',productRouter)
-app.use('/user',userRouter);
+app.use(`${URL}/product`, productRouter);
+app.use(`${URL}/user`, userRouter);
 
 app.listen(5000,()=>{
     console.log("Server is running")

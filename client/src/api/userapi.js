@@ -1,8 +1,10 @@
 import axios from 'axios';
 
+const backendURL = 'https://starsports-cap10.onrender.com';
+
 const getUsers = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/user");
+    const res = await axios.get(`${backendURL}/user`);
     return res.data;
   } catch (error) {
     console.log(error);
@@ -13,7 +15,7 @@ const getUsers = async () => {
 const addUser = async (userData) => {
   try {
     console.log(userData)
-    await axios.post("http://localhost:5000/user", userData);
+    await axios.post(`${backendURL}/user`, userData);
   } catch (error) {
     console.log(error);
   }
@@ -21,7 +23,7 @@ const addUser = async (userData) => {
 
 const deleteUser = async (userId) => {
   try {
-    await axios.delete(`http://localhost:5000/user/${userId}`);
+    await axios.delete(`${backendURL}/user${userId}`);
     console.log('User deleted successfully');
   } catch (error) {
     console.log(error);
@@ -30,7 +32,7 @@ const deleteUser = async (userId) => {
 
 const updateUser = async (userId, updatedUserData) => {
   try {
-    await axios.put(`http://localhost:5000/user/${userId}`, updatedUserData);
+    await axios.put(`${backendURL}/user${userId}`, updatedUserData);
     console.log('User updated successfully');
   } catch (error) {
     console.log(error);

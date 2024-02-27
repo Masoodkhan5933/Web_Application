@@ -1,10 +1,10 @@
 import mongoose from 'mongoose'
-
+import validator from 'validator'
 const users=mongoose.Schema(
     {
         name: {
             type:String,
-            required:true
+            required:[true,"Please enter you name"]
         },
         dob:{
             type:String,
@@ -12,11 +12,15 @@ const users=mongoose.Schema(
         },
         email:{
             type:String,
-            required:true
+            required:[true,"please enter your email"],
+            unique:true,
+            lowercase: true,
+            validate: [validator.isEmail,"Please enter the valid Email address"]
         },
         password:{
             type:String,
-            required:true
+            required:[true,"Please provide a password"],
+            minlength : 8
         },
         role:{
             type:String,

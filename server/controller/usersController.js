@@ -30,7 +30,6 @@ const addUser = async (req, res) => {
   });
   console.log(newUser)
   try {
-    // console.log(newUser)
     await newUser.save();
     res.json(newUser);
   } catch (error) {
